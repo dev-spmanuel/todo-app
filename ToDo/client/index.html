@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+  <title>ToDo</title>
+  <!-- <script type="module">
+    fetch('http://localhost:3000/api/notes')
+      .then(res => res.json())
+      .then(notes => {
+        const html = notes.map(note => {
+          return `
+            <div data-id="${note.id}">
+              <h2>${note.title}</h2>
+              <p>${note.tasks}</p>
+            </div>
+          `
+        }).join('')
+
+        document.querySelector('div').innerHTML = html
+      })
+  </script> -->
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "ToDo List Server",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "PORT=3000 node --watch server.js"
+  },
+  "keywords": [
+    "MERN"
+  ],
+  "author": "spmanuel",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.21.0",
+    "mongoose": "8.7.0"
+  }
+}
