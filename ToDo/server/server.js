@@ -1,7 +1,6 @@
 import express from "express"
-import connectDB from "./src/config/db.js"
 import cors from "cors"
-import Note from "./src/model/note.js"
+import connectDB from "./src/config/db.js"
 
 import notesRouter from "./src/controllers/noteController.js"
 

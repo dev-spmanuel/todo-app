@@ -1,5 +1,5 @@
 import Navigation from './components/Navigation/Navigation'
-import Note from './components/Notes/Note'
+import Results from './components/Results'
 import { useEffect, useState } from 'react'
 
 export default function App() {
@@ -58,23 +58,16 @@ export default function App() {
   }
 
   return (
-    <div className="${theme}">
+    <div>
       <Navigation
         theme={theme}
         handleThemeChange={handleThemeChange}
         handleAddNote={addNote}
       />
-      <div className="bg-white dark:bg-slate-800 min-h-screen px-16 grid place-content-center gap-8">
-        <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {notes?.map((note, index) => (
-            <Note
-              key={index}
-              note={note}
-              handleUpdateNote={updateNote}
-            />
-          ))}
-        </div>
-      </div>
+      <Results
+        notes={notes}
+        updateNote={updateNote}
+      />
     </div>
 
   )
