@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ToDos from "./ToDos";
+import Tasks from "./Tasks";
 import EditModeButton from "./EditModeButton";
 import EditTitleButton from "./EditTitleButton";
 
@@ -27,7 +27,7 @@ export default function Note({ note, handleUpdateNote }) {
 
   return (
     <section className="bg-blue-200 rounded-lg shadow-lg px-3 py-2 dark:bg-slate-400">
-      <div className="flex justify-between gap-5">
+      <div className="flex justify-between gap-6">
         <div className="flex font-bold">
           {editMode && editTitle ? (
             <input
@@ -62,7 +62,7 @@ export default function Note({ note, handleUpdateNote }) {
       {/* Separador */}
       <div className="border-b border-gray-600 dark:border-gray-200 my-2"></div>
 
-      <ToDos
+      <Tasks
         note={note}
         updateNote={handleUpdateNote}
         editMode={editMode}
