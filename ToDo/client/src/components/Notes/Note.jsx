@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Tasks from "./Tasks";
+import Separator from "./Separator";
 import EditModeButton from "./EditModeButton";
 import EditTitleButton from "./EditTitleButton";
+import Cross from "../Icons/Cross";
 
-export default function Note({ note, handleUpdateNote }) {
+export default function Note({ note, handleUpdateNote, handleDeleteNote }) {
 
   const [editMode, setEditMode] = useState(false)
   const [editTitle, setEditTitle] = useState(false)
@@ -23,6 +25,10 @@ export default function Note({ note, handleUpdateNote }) {
     const updatedNote = { ...note, title: newTitle }
     handleUpdateNote(updatedNote)
     setEditTitle(false)
+  }
+
+  function handleConfirmDeleteNote() {
+    window.confirm("Do you want to delete this note?") && handleDeleteNote(note._id)
   }
 
   return (
@@ -56,17 +62,26 @@ export default function Note({ note, handleUpdateNote }) {
             handleEditMode={handleEditMode}
           />
         </div>
-
       </div>
 
-      {/* Separador */}
-      <div className="border-b border-gray-600 dark:border-gray-200 my-2"></div>
+      <Separator />
 
       <Tasks
         note={note}
         updateNote={handleUpdateNote}
         editMode={editMode}
       />
+
+      {editMode && (
+        <div>
+          <Separator />
+
+          <div className="flex justify-center mt-2">
+            <Cross handleOnClick={handleConfirmDeleteNote} />
+          </div>
+        </div>
+      )}
+
 
     </section >
   )
