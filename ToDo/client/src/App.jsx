@@ -28,22 +28,6 @@ export default function App() {
   }, [data])
 
 
-  function updateNote(updatedNote) {
-    fetch(`http://localhost:3000/api/notes/${updatedNote._id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(updatedNote)
-    })
-      .then(
-        setNotes(notes.map(note => note._id === updatedNote._id ? updatedNote : note))
-      )
-      .catch(error => {
-        console.error("Error updating note", error)
-      })
-  }
-
   function addNote() {
     const newNote = { title: "New Note", tasks: [] }
     fetch(`http://localhost:3000/api/notes`, {
@@ -61,6 +45,34 @@ export default function App() {
       })
   }
 
+  function updateNote(updatedNote) {
+    fetch(`http://localhost:3000/api/notes/${updatedNote._id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(updatedNote)
+    })
+      .then(
+        setNotes(notes.map(note => note._id === updatedNote._id ? updatedNote : note))
+      )
+      .catch(error => {
+        console.error("Error updating note", error)
+      })
+  }
+
+  function deleteNote(noteId) {
+    fetch(`http://localhost:3000/api/notes/${noteId}`, {
+      method: "DELETE"
+    })
+      .then(
+        setNotes(notes.filter(note => note._id !== noteId))
+      )
+      .catch(error => {
+        console.error("Error deleting note", error)
+      })
+  }
+
   return (
     <div>
       <Navigation
@@ -73,6 +85,7 @@ export default function App() {
       <Results
         notes={notes}
         updateNote={updateNote}
+        deleteNote={deleteNote}
       />
     </div>
 
