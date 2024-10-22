@@ -28,9 +28,9 @@ export default function App() {
   }, [data])
 
 
-  function addNote() {
+  async function addNote() {
     const newNote = { title: "New Note", tasks: [] }
-    fetch(`http://localhost:3000/api/notes`, {
+    await fetch(`http://localhost:3000/api/notes`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -45,8 +45,8 @@ export default function App() {
       })
   }
 
-  function updateNote(updatedNote) {
-    fetch(`http://localhost:3000/api/notes/${updatedNote._id}`, {
+  async function updateNote(updatedNote) {
+    await fetch(`http://localhost:3000/api/notes/${updatedNote._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -61,8 +61,8 @@ export default function App() {
       })
   }
 
-  function deleteNote(noteId) {
-    fetch(`http://localhost:3000/api/notes/${noteId}`, {
+  async function deleteNote(noteId) {
+    await fetch(`http://localhost:3000/api/notes/${noteId}`, {
       method: "DELETE"
     })
       .then(

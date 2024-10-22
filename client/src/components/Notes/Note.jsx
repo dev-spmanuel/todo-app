@@ -3,7 +3,6 @@ import Tasks from "./Tasks";
 import Separator from "./Separator";
 import Pencil from "../Icons/Pencil";
 import Check from "../Icons/Check";
-import EditTitleButton from "./EditTitleButton";
 import Cross from "../Icons/Cross";
 
 export default function Note({ note, handleUpdateNote, handleDeleteNote }) {
@@ -48,11 +47,10 @@ export default function Note({ note, handleUpdateNote, handleDeleteNote }) {
           )}
           {editMode && (
             <div className="flex justify-center">
-              <EditTitleButton
-                editTitle={editTitle}
-                handleEditTitle={handleEditTitle}
-                handleSetTitle={handleSetTitle}
-              />
+              {editTitle ?
+                <Check handleOnClick={handleSetTitle} /> :
+                <Pencil handleOnClick={handleEditTitle} />
+              }
             </div>
           )}
         </div>
