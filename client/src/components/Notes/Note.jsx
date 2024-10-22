@@ -21,7 +21,6 @@ export default function Note({ note, handleUpdateNote, handleDeleteNote }) {
   }
 
   function handleSetTitle() {
-    console.log("Changing title...")
     const updatedNote = { ...note, title: newTitle }
     handleUpdateNote(updatedNote)
     setEditTitle(false)
