@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Tasks from "./Tasks";
 import Separator from "./Separator";
-import EditModeButton from "./EditModeButton";
+import Pencil from "../Icons/Pencil";
+import Check from "../Icons/Check";
 import EditTitleButton from "./EditTitleButton";
 import Cross from "../Icons/Cross";
 
@@ -56,12 +57,11 @@ export default function Note({ note, handleUpdateNote, handleDeleteNote }) {
           )}
         </div>
 
-        <div className="flex justify-end">
-          <EditModeButton
-            editMode={editMode}
-            handleEditMode={handleEditMode}
-          />
-        </div>
+        {!editMode && (
+          <div className="flex justify-end">
+            <Pencil handleOnClick={handleEditMode} />
+          </div>
+        )}
       </div>
 
       <Separator />
@@ -72,15 +72,18 @@ export default function Note({ note, handleUpdateNote, handleDeleteNote }) {
         editMode={editMode}
       />
 
-      {editMode && (
-        <div>
-          <Separator />
+      {
+        editMode && (
+          <div>
+            <Separator />
 
-          <div className="flex justify-center mt-2">
-            <Cross handleOnClick={handleConfirmDeleteNote} />
+            <div className="flex justify-center mt-2 gap-5">
+              <Check handleOnClick={handleEditMode} />
+              <Cross handleOnClick={handleConfirmDeleteNote} />
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }
 
 
     </section >
