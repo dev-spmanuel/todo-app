@@ -1,7 +1,7 @@
 services:
 
   client:
-    build: ./ToDo/client
+    build: ./client
     container_name: client
     ports:
       - 80:80
@@ -9,7 +9,7 @@ services:
       - server
 
   server:
-    build: ./ToDo/server
+    build: ./server
     container_name: server
     ports:
       - 5000:5000
