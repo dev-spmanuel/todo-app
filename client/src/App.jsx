@@ -23,7 +23,7 @@ export default function App() {
     setTheme(!theme)
   }
 
-  const { data, loading, error } = useFetch(API_URL)
+  const { data, error } = useFetch(API_URL)
 
   const [notes, setNotes] = useState([])
 
@@ -69,7 +69,6 @@ export default function App() {
         handleAddNote={handleAddNote}
       />
       {error && <div>Error fetching notes: {error}</div>}
-      {loading && <div>Loading notes...</div>}
       <Results
         notes={notes}
         updateNote={handleUpdateNote}
