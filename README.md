@@ -1,12 +1,12 @@
 # TODO APP
 
-## Web Application for Creating To-Do Lists
+## Web Application for creating To-Do lists
 
-_TODO APP_ is an application that allows users to create, manage and organize their to-do lists efficiently. This app is built for people who want to 
+_TODO APP_ is an application that allows users to create, manage and delete their to-do lists. This app is built for people who want to organize and manage their daily tasks efficiently.
 
 ## **Key Features**
-- Create tasks blocks called Lists
-- Organize tasks into different lists or categories
+- Organize tasks into different lists or categories by:
+  - Create tasks blocks called Lists
 - Create and delete tasks
 - Mark tasks as completed
 
@@ -24,7 +24,7 @@ Follow this steps to install and run the application locally:
 ```bash
 make install
 ```
-3. Create and build the docker images in the directory of the proyect:
+3. Create and build the docker images:
 ```bash
 make docker-up
 ```
