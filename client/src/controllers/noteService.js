@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/notes';
+const API_URL = 'http://localhost:5000/api/notes';
 
 export async function addNote() {
   const newNote = { title: "New Note", tasks: [] }

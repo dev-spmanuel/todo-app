@@ -10,7 +10,7 @@ import { addNote, updateNote, deleteNote } from './controllers/noteService'
 
 export default function App() {
 
-  const API_URL = 'http://localhost:3000/api/notes'
+  const API_URL = 'http://localhost:5000/api/notes'
 
   const [theme, setTheme] = useState(() => {
     // Returns 1 if the windows theme is 'light' and 0 if it is 'dark'
