@@ -1,16 +1,15 @@
-import { useState } from "react"
-import Note from "./Notes/Note"
+import List from "./Lists/List"
 
-export default function Results({ notes, updateNote, deleteNote }) {
+export default function Results({ lists, updateList, deleteList }) {
   return (
     <div className="bg-white dark:bg-slate-800 min-h-screen px-16 grid place-content-center gap-8">
       <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {notes?.map((note, index) => (
-          <Note
+        {lists?.map((list, index) => (
+          <List
             key={index}
-            note={note}
-            handleUpdateNote={updateNote}
-            handleDeleteNote={deleteNote}
+            list={list}
+            handleUpdateList={updateList}
+            handleDeleteList={deleteList}
           />
         ))}
       </div>

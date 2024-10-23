@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Cross from '../Icons/Cross'
-import Note from './Note'
+import List from './List'
 
 export default function Task({ task, onTaskUpdate, onTaskDelete, editMode }) {
 

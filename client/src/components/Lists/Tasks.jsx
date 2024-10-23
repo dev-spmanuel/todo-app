@@ -3,32 +3,32 @@ import Task from "./Task"
 import Plus from "../Icons/Plus"
 import Check from "../Icons/Check"
 
-export default function Tasks({ note, updateNote, editMode }) {
+export default function Tasks({ list, updateList, editMode }) {
 
   const [newTask, setNewTask] = useState("")
   const [addingTask, setAddingTask] = useState(false)
 
   function handleTaskUpdate(taskId, completed) {
-    const updatedNote = { ...note, tasks: note.tasks.map(task => task._id === taskId ? { ...task, completed } : task) }
-    updateNote(updatedNote)
+    const updatedList = { ...list, tasks: list.tasks.map(task => task._id === taskId ? { ...task, completed } : task) }
+    updateList(updatedList)
   }
 
   function handleTaskDelete(taskId) {
-    const updatedNote = { ...note, tasks: note.tasks.filter(task => task._id !== taskId) }
-    updateNote(updatedNote)
+    const updatedList = { ...list, tasks: list.tasks.filter(task => task._id !== taskId) }
+    updateList(updatedList)
   }
 
   function handleAddTask() {
     console.log(newTask)
-    const updatedNote = { ...note, tasks: [...note.tasks, { title: newTask, completed: false }] }
-    updateNote(updatedNote)
+    const updatedList = { ...list, tasks: [...list.tasks, { title: newTask, completed: false }] }
+    updateList(updatedList)
     setNewTask("")
     setAddingTask(false)
   }
 
   return (
     <div className="space-y-2">
-      {note.tasks?.map((task, index) => (
+      {list.tasks?.map((task, index) => (
         <Task
           key={index}
           task={task}

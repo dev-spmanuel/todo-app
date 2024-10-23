@@ -6,11 +6,11 @@ const taskSchema = new Schema({
   completed: { type: Boolean, default: false }
 })
 
-const noteSchema = new Schema({
+const listSchema = new Schema({
   title: { type: String, required: true },
   tasks: [taskSchema]
 })
 
-const Note = model('Note', noteSchema)
+const List = model('List', listSchema)
 
-export default Note
+export default List
