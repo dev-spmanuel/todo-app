@@ -20,8 +20,17 @@ _TODO APP_ is an application that allows users to create, manage and organize th
 ## Installation
 Follow this steps to install and run the application locally:
 1. Clone the repository
-2. Create and build the docker images in the directory of the proyect:
+2. Install dependencies:
+```bash
+cd server/
+bun install
+```
+```bash
+cd client/
+bun install
+```
+3. Create and build the docker images in the directory of the proyect:
 ```bash
   docker-compose up --build
 ```
-3. Go to `http://localhost` to use the application
+4. Go to `http://localhost` to use the application
