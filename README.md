@@ -22,15 +22,10 @@ Follow this steps to install and run the application locally:
 1. Clone the repository
 2. Install dependencies:
 ```bash
-cd server/
-bun install
-```
-```bash
-cd client/
-bun install
+make install
 ```
 3. Create and build the docker images in the directory of the proyect:
 ```bash
-  docker-compose up --build
+make docker-up
 ```
 4. Go to `http://localhost` to use the application
