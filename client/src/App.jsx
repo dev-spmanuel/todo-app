@@ -5,12 +5,12 @@ import Results from './components/Results'
 import useFetch from './hooks/useFetch'
 import useTheme from './hooks/useTheme'
 
-import { addNote, updateNote, deleteNote } from './controllers/noteService'
+import { addList, updateList, deleteList } from './controllers/listService'
 
 
 export default function App() {
 
-  const API_URL = 'http://localhost:5000/api/notes'
+  const API_URL = 'http://localhost:5000/api/lists'
 
   const [theme, setTheme] = useState(() => {
     // Returns 1 if the windows theme is 'light' and 0 if it is 'dark'
@@ -25,39 +25,39 @@ export default function App() {
 
   const { data, error } = useFetch(API_URL)
 
-  const [notes, setNotes] = useState([])
+  const [lists, setLists] = useState([])
 
   useEffect(() => {
     if (data) {
-      setNotes(data)
+      setLists(data)
     }
   }, [data])
 
 
-  async function handleAddNote() {
+  async function handleAddList() {
     try {
-      const newNote = await addNote()
-      setNotes(prevNotes => [...prevNotes, newNote])
+      const newList = await addList()
+      setLists(prevLists => [...prevLists, newList])
     } catch (error) {
-      console.error("Error adding note", error)
+      console.error("Error adding list", error)
     }
   }
 
-  async function handleUpdateNote(updatedNote) {
+  async function handleUpdateList(updatedList) {
     try {
-      const updated = await updateNote(updatedNote)
-      setNotes(prevNotes => prevNotes.map(note => note._id === updated._id ? updated : note))
+      const updated = await updateList(updatedList)
+      setLists(prevLists => prevLists.map(list => list._id === updated._id ? updated : list))
     } catch (error) {
-      console.error("Error updating note", error)
+      console.error("Error updating list", error)
     }
   }
 
-  async function handleDeleteNote(noteId) {
+  async function handleDeleteList(listId) {
     try {
-      await deleteNote(noteId)
-      setNotes(prevNotes => prevNotes.filter(note => note._id !== noteId))
+      await deleteList(listId)
+      setLists(prevLists => prevLists.filter(list => list._id !== listId))
     } catch (error) {
-      console.error("Error deleting note", error)
+      console.error("Error deleting list", error)
     }
   }
 
@@ -66,13 +66,13 @@ export default function App() {
       <Navigation
         theme={theme}
         handleThemeChange={handleThemeChange}
-        handleAddNote={handleAddNote}
+        handleAddList={handleAddList}
       />
-      {error && <div>Error fetching notes: {error}</div>}
+      {error && <div>Error fetching lists: {error}</div>}
       <Results
-        notes={notes}
-        updateNote={handleUpdateNote}
-        deleteNote={handleDeleteNote}
+        lists={lists}
+        updateList={handleUpdateList}
+        deleteList={handleDeleteList}
       />
     </div>
 

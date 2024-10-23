@@ -5,11 +5,11 @@ import Pencil from "../Icons/Pencil";
 import Check from "../Icons/Check";
 import Cross from "../Icons/Cross";
 
-export default function Note({ note, handleUpdateNote, handleDeleteNote }) {
+export default function List({ list, handleUpdateList, handleDeleteList }) {
 
   const [editMode, setEditMode] = useState(false)
   const [editTitle, setEditTitle] = useState(false)
-  const [newTitle, setNewTitle] = useState(note.title)
+  const [newTitle, setNewTitle] = useState(list.title)
 
   function handleEditMode() {
     setEditTitle(false)
@@ -21,13 +21,13 @@ export default function Note({ note, handleUpdateNote, handleDeleteNote }) {
   }
 
   function handleSetTitle() {
-    const updatedNote = { ...note, title: newTitle }
-    handleUpdateNote(updatedNote)
+    const updatedList = { ...list, title: newTitle }
+    handleUpdateList(updatedList)
     setEditTitle(false)
   }
 
-  function handleConfirmDeleteNote() {
-    window.confirm("Do you want to delete this note?") && handleDeleteNote(note._id)
+  function handleConfirmDeleteList() {
+    window.confirm("Do you want to delete this list?") && handleDeleteList(list._id)
   }
 
   return (
@@ -42,7 +42,7 @@ export default function Note({ note, handleUpdateNote, handleDeleteNote }) {
               className="border rounded px-2 py-1"
             />
           ) : (
-            note.title
+            list.title
           )}
           {editMode && (
             <div className="flex justify-center">
@@ -64,8 +64,8 @@ export default function Note({ note, handleUpdateNote, handleDeleteNote }) {
       <Separator />
 
       <Tasks
-        note={note}
-        updateNote={handleUpdateNote}
+        list={list}
+        updateList={handleUpdateList}
         editMode={editMode}
       />
 
@@ -76,7 +76,7 @@ export default function Note({ note, handleUpdateNote, handleDeleteNote }) {
 
             <div className="flex justify-center mt-2 gap-5">
               <Check handleOnClick={handleEditMode} />
-              <Cross handleOnClick={handleConfirmDeleteNote} />
+              <Cross handleOnClick={handleConfirmDeleteList} />
             </div>
           </div>
         )

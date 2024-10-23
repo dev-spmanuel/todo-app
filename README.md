@@ -5,7 +5,7 @@
 _TODO APP_ is an application that allows users to create, manage and organize their to-do lists efficiently. This app is built for people who want to 
 
 ## **Key Features**
-- Create tasks blocks called Notes
+- Create tasks blocks called Lists
 - Organize tasks into different lists or categories
 - Create and delete tasks
 - Mark tasks as completed

@@ -2,7 +2,7 @@ import express from "express"
 import cors from "cors"
 import connectDB from "./src/config/db.js"
 
-import notesRouter from "./src/controllers/noteController.js"
+import listsRouter from "./src/controllers/listController.js"
 
 const app = express()
 const PORT = process.env.PORT || 5000
@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
   res.end('Hola mundo')
 })
 
-app.use("/api/notes", notesRouter)
+app.use("/api/lists", listsRouter)
 
 app.use((req, res) => {
   res.status(404).send("<h1>Not Found</h1>")
