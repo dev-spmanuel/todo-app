@@ -5,7 +5,7 @@ import Results from './components/Results'
 import useFetch from './hooks/useFetch'
 import useTheme from './hooks/useTheme'
 
-import { addList, updateList, deleteList } from './controllers/listService'
+import { addList, updateList, deleteList } from './services/listService'
 
 
 export default function App() {
