@@ -1,6 +1,6 @@
 import { mongoose } from 'mongoose'
 
-const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/ToDo'
+const mongoURL = 'mongodb://mongo:27017/ToDo'
 
 async function connectDB() {
   try {
