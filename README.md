@@ -1,35 +1,35 @@
 # TODO APP
 
 
-## Web Application for creating To-Do lists
+## Aplicación web para crear listas de tareas
 
-_TODO APP_ is an application that allows users to create, manage and delete their to-do lists. This app is built for people who want to organize and manage their daily tasks efficiently.
+_TODO APP_ es una aplicación que permite a los usuarios crear, gestionar y eliminar sus listas de tareas pendientes. Esta aplicación está diseñada para personas que desean organizar y gestionar sus tareas diarias de manera eficiente.
 
-## **Key Features**
-- Organize tasks into different lists or categories by:
-  - Create tasks blocks called Lists
-- Create and delete tasks
-- Mark tasks as completed
+## **Características**
+- Organizar tareas en diferentes listas o categorías mediante:
+  - Creación de bloques de tareas llamadas Listas
+- Crear y eliminar tareas
+- Marcar tareas como completadas
 
-## Technology Stack
-- Runtime and package manager: **Bun** 🍞 (JavaScript)
+## Tecnologías utilizadas
+- Entorno de ejecución y gestor de paquetes: **Bun** 🍞 (JavaScript)
 - Backend: **NodeJS + ExpressJS**
 - Frontend: **Vite + React**
-- DataBase: **MongoDB**
-- Styles: **TailwindCSS**
+- Base de Datos: **MongoDB**
+- Estilos: **TailwindCSS**
 
-## Installation
+## Instalación local
 > [!IMPORTANT]
-> Since this application is run in a Docker Container, it's necessary to have it [installed](https://docs.docker.com/engine/install/) in the system
+> Ya que la aplicación se ejecuta en contenedores de Docker, es necesario tenerlo [instalado](https://docs.docker.com/engine/install/).
 
-Follow this steps to install and run the application locally:
-1. Clone the repository
-2. Install dependencies:
+Para instalar y ejecutar la aplicación localmente:
+1. Clone el repositorio
+2. Instala las dependencias con:
 >```bash
 >make install
 >```
-3. Create and build the docker images:
+3. Levanta los contenedores de Docker con:
 >```bash
 >make docker-up
 >```
-4. Go to `http://localhost` to use the application
+4. Ve a tu navegador con `http://localhost` para empezar a usar la aplicación.
