@@ -5,12 +5,12 @@ import Results from './components/Results'
 import useFetch from './hooks/useFetch'
 import useTheme from './hooks/useTheme'
 
+import config from '../config'
+
 import { addList, updateList, deleteList } from './services/listService'
 
 
 export default function App() {
-
-  const API_URL = 'http://localhost:5000/api/lists'
 
   const [theme, setTheme] = useState(() => {
     // Returns 1 if the windows theme is 'light' and 0 if it is 'dark'
@@ -23,7 +23,7 @@ export default function App() {
     setTheme(!theme)
   }
 
-  const { data, error } = useFetch(API_URL)
+  const { data, error } = useFetch(config.API_URL)
 
   const [lists, setLists] = useState([])
 
