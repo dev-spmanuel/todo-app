@@ -25,11 +25,11 @@ _TODO APP_ es una aplicación que permite a los usuarios crear, gestionar y elim
 Para instalar y ejecutar la aplicación localmente:
 1. Clone el repositorio
 2. Instala las dependencias con:
->```bash
->make install
->```
+```bash
+$ make install
+```
 3. Levanta los contenedores de Docker con:
->```bash
->make docker-up
->```
+```bash
+$ make docker-up
+```
 4. Ve a tu navegador con `http://localhost` para empezar a usar la aplicación.
