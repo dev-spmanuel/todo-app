@@ -10,6 +10,7 @@ _TODO APP_ es una aplicación que permite a los usuarios crear, gestionar y elim
   - Creación de bloques de tareas llamadas Listas
 - Crear y eliminar tareas
 - Marcar tareas como completadas
+- Elegir entre la visualización en modo oscuro o modo claro
 
 ## Tecnologías utilizadas
 - Entorno de ejecución: **Docker**
