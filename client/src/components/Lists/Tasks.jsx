@@ -27,7 +27,7 @@ export default function Tasks({ list, updateList, editMode }) {
   }
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 text-lg">
       {list.tasks?.map((task, index) => (
         <Task
           key={index}

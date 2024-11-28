@@ -31,9 +31,9 @@ export default function List({ list, handleUpdateList, handleDeleteList }) {
   }
 
   return (
-    <section className="bg-blue-200 rounded-lg shadow-lg px-3 py-2 dark:bg-slate-400">
+    <section className="w-full min-h-32 bg-blue-200 rounded-lg shadow-lg px-4 py-4 dark:bg-slate-400">
       <div className="flex justify-between gap-6">
-        <div className="flex font-bold">
+        <div className="flex font-bold text-lg">
           {editMode && editTitle ? (
             <input
               type="text"

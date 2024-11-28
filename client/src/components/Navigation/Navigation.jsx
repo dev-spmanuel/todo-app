@@ -2,9 +2,9 @@ import NavButton from './NavButton'
 
 export default function Navigation({ theme, handleThemeChange, handleAddList }) {
   return (
-    <div className="bg-blue-100 dark:bg-slate-600 dark:text-slate-200 px-4 py-4 flex justify-between">
-      <div className="flex items-center">
-        ToDo Lists
+    <div className="bg-white dark:bg-zinc-600 dark:text-slate-200 px-8 py-4 flex justify-between">
+      <div className="flex items-center font-bold text-2xl">
+        To-Do Lists
       </div>
 
       <div className="flex justify-end space-x-4">
