@@ -12,7 +12,8 @@ _TODO APP_ es una aplicación que permite a los usuarios crear, gestionar y elim
 - Marcar tareas como completadas
 
 ## Tecnologías utilizadas
-- Entorno de ejecución y gestor de paquetes: **Bun** 🍞 (JavaScript)
+- Entorno de ejecución: **Docker**
+- Gestor de paquetes: **Bun**
 - Backend: **NodeJS + ExpressJS**
 - Frontend: **Vite + React**
 - Base de Datos: **MongoDB**
