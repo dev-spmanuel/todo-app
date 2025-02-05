@@ -23,6 +23,8 @@ _TODO APP_ es una aplicación que permite a los usuarios crear, gestionar y elim
 ## Instalación local
 > [!IMPORTANT]
 > Ya que la aplicación se ejecuta en contenedores de Docker, es necesario tenerlo [instalado](https://docs.docker.com/engine/install/).
+>
+> Además, deberás instalar [Bun](https://bun.sh/).
 
 Para instalar y ejecutar la aplicación localmente:
 1. Clone el repositorio
